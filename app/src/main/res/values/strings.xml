@@ -6,4 +6,6 @@
     <string name="bus_type">Bus Type</string>
     <string name="to">To</string>
     <string name="submit">SUBMIT</string>
+    <string name="stop_name">Stop Name</string>
+    <string name="hh_mm_am_pm">HH:MM AM/PM</string>
 </resources>

@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F5F5"
+    android:background="#4D37FF70"
     android:orientation="vertical"
     android:padding="15dp"
     tools:context=".MainActivity">
@@ -49,7 +49,9 @@
             android:layout_marginEnd="85dp"
             android:autofillHints=""
             android:ems="10"
+            android:gravity="center"
             android:hint="@string/bus_number"
+            android:imeOptions="actionDone"
             android:inputType="number"
             android:minHeight="48dp"
             android:textColorHint="#546E7A"
@@ -58,67 +60,150 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/submitBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="143dp"
-            android:layout_marginTop="49dp"
-            android:layout_marginEnd="148dp"
+            android:layout_marginTop="44dp"
+            android:backgroundTint="#501C1C"
             android:text="@string/submit"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.501"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5" />
+            app:layout_constraintTop_toBottomOf="@+id/toeditText" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName3"
+            android:id="@+id/busTypeEditText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="86dp"
             android:layout_marginTop="15dp"
             android:layout_marginEnd="86dp"
+            android:autofillHints=""
+            android:capitalize="sentences"
             android:ems="10"
+            android:gravity="center"
             android:hint="@string/bus_type"
+            android:imeOptions="actionDone"
             android:inputType="textPersonName"
             android:minHeight="48dp"
             android:textColorHint="#546E7A"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/busNumEditText"
-            android:autofillHints="" />
+            app:layout_constraintTop_toBottomOf="@+id/busNumEditText" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName4"
+            android:id="@+id/fromEditText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="86dp"
             android:layout_marginTop="18dp"
             android:layout_marginEnd="86dp"
+            android:autofillHints=""
+            android:capitalize="words"
             android:ems="10"
+            android:gravity="center"
             android:hint="@string/from"
+            android:imeOptions="actionDone"
             android:inputType="textPersonName"
             android:minHeight="48dp"
             android:textColorHint="#546E7A"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3"
-            android:autofillHints="" />
+            app:layout_constraintTop_toBottomOf="@+id/busTypeEditText" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName5"
+            android:id="@+id/toeditText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="85dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="87dp"
+            android:autofillHints=""
+            android:capitalize="words"
             android:ems="10"
+            android:gravity="center"
             android:hint="@string/to"
+            android:imeOptions="actionDone"
             android:inputType="textPersonName"
             android:minHeight="48dp"
-            android:textColorHint="#546E7A"
+            android:textColorHint="#00796B"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4"
-            android:autofillHints="" />
+            app:layout_constraintTop_toBottomOf="@+id/fromEditText"
+            tools:ignore="TextContrastCheck,TextContrastCheck,TextContrastCheck" />
+
+        <LinearLayout
+            android:id="@+id/addStopLayout"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="28dp"
+            android:gravity="center|center_vertical"
+            android:orientation="vertical"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/submitBtn">
+
+            <EditText
+                android:id="@+id/stopNameEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:autofillHints=""
+                android:capitalize="sentences"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="@string/stop_name"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                android:textColorHint="#2E7D32"
+                tools:layout_editor_absoluteX="86dp"
+                tools:layout_editor_absoluteY="412dp" />
+
+            <EditText
+                android:id="@+id/timeEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp"
+                android:autofillHints=""
+                android:ems="10"
+                android:gravity="center"
+                android:hint="@string/hh_mm_am_pm"
+                android:inputType="text"
+                android:minHeight="48dp"
+                android:textColorHint="#2E7D32"
+                tools:layout_editor_absoluteX="86dp"
+                tools:layout_editor_absoluteY="474dp" />
+
+            <LinearLayout
+                android:layout_width="228dp"
+                android:layout_height="45dp"
+                android:orientation="horizontal"
+                tools:layout_editor_absoluteX="77dp"
+                tools:layout_editor_absoluteY="554dp">
+
+                <Button
+                    android:id="@+id/addBtn"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="ADD"
+                    android:textColor="#8F6519"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <Button
+                    android:id="@+id/submitStopBtn"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/submit"
+                    android:textColor="#371B1B"
+                    tools:ignore="TouchTargetSizeCheck" />
+            </LinearLayout>
+        </LinearLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>
